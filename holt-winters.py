@@ -101,9 +101,7 @@ test_predictions = fitted_model.forecast(24)
 
 fighw2 = go.Figure(layout =go.Layout(
     xaxis = dict(tickfont=dict(size=14),title='<b>Data', ticklabelmode="period", dtick="M1", tickformat="%b\n%",tickangle=90,tickvals=cz[:48],
-                            ticktext = cz[:48],linecolor='black',tickwidth=1,tickcolor='black',ticks="outside"),
-    yaxis = dict(linecolor='black',title='<b>Liczba sprzedaży [w sztukach]',tickwidth=1,tickcolor='black',ticks="outside",gridcolor='black')
-    ))
+                            ticktext = cz[:48],linecolor='black',tickwidth=2,tickcolor='black',ticks="outside")))
 fighw2.add_trace(go.Scatter(
         x = cz[:24],
         y = hw[wybor_kat],
