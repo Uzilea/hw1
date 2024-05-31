@@ -29,7 +29,7 @@ t = col1.selectbox('Wybierz rodzaj trendu  :',['Addytywny','Multiplikatywny'])
 s = col2.selectbox('Wybierz rodzaj sezonowości  :',['Addytywny','Multiplikatywny'])
 sz = col3.selectbox('Czy stłumić składnik trendu:',['Tak','Nie'])
 
-if t='Addytywny':
+if t=='Addytywny':
   wybor_t='add'
 else:
   wybor_t='mul'
