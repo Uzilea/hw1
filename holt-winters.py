@@ -66,22 +66,22 @@ RMSE=np.sqrt(MSE)
 
 #wizualizacja
 fighw1 = go.Figure(layout =go.Layout(xaxis = dict(ticklabelmode="period", dtick="M1", tickformat="%b\n%",tickangle=90,tickvals=list(df1['Rok_miesiac'].astype('string')),
-                            ticktext = df1['Rok_miesiac'].astype('string'),linecolor='black',tickwidth=1,tickcolor='black',ticks="outside",tickfont=dict(size=12))))
+                            ticktext = df1['Rok_miesiac'].astype('string'),linecolor='black',tickwidth=2,tickcolor='black',ticks="outside",tickfont=dict(size=12))))
 fighw1.add_trace(go.Scatter(
         x = df1['Rok_miesiac'],
         y = hw[wybor_kat],
         mode='lines+markers',
-        line_color='red'
+        line_color='coral'
+        name='Neuca',
         ))
 fighw1.add_trace(go.Scatter(
     x = df1['Rok_miesiac'],
     y = hw['HWES3'],
-    name = "HWES",
+    name = "Holt-Winters",
     mode='lines+markers',
     marker_size=6,
-    line_color = 'dodgerblue',
-    opacity = 0.8))
-fighw1.update_layout(title='Sprzedaż ilościowa - prognoza')
+    line_color = 'aquamarine',)
+fighw1.update_layout(title=f'Ilościowa sprzedaż kategorii {wybor_kat.lower()} w Neuce w podziale na miesiące')
 fighw1.show()
 
 st.plotly_chart(fighw1,True)
