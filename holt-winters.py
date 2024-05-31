@@ -33,8 +33,16 @@ if t=='Addytywny':
   wybor_t='add'
 else:
   wybor_t='mul'
+if s=='Addytywny':
+  wybor_s='add'
+else:
+  wybor_s='mul'
+if sz=='Tak':
+  wybor_sz=True
+else:
+  wybor_sz=False
 
-st.subheader(wybor_t)
+st.subheader(wybor_t, wybor_s, wybor_sz)
 # model
 # hw['HWES3'] = ExponentialSmoothing(hw['HIGIENA OSOBISTA'],damped=False,trend='add',seasonal='add',seasonal_periods=12,freq='MS').fit().fittedvalues
 
