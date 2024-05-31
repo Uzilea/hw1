@@ -21,7 +21,7 @@ ll, rr = st.columns((2,2))
 kategorie=dane.columns
 kategorie=kategorie[2:]
 
-wybor_kat = selectbox('Wybierz kategorię :', kategorie)
+wybor_kat = st.selectbox('Wybierz kategorię :', kategorie)
 
 st.subheader('Wybierz parametry modelu :')
 l, r = st.columns((2,2))
