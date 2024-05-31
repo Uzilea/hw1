@@ -2,7 +2,7 @@
 # coding: utf-8
 
 # In[1]:
-!pip install -r requirements.txt
+
 import streamlit as st
 import numpy as np
 import pandas as pd
