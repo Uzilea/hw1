@@ -25,9 +25,18 @@ wybor_kat = st.selectbox('Wybierz kategorię :', kategorie)
 
 st.subheader('Wybierz parametry modelu :')
 col1, col2, col3= st.columns(3)
-t = col1.selectbox('Wybierz rodzaj trendu  :',['addytywny','multiplikatywny'])
-s = col2.selectbox('Wybierz rodzaj sezonowości  :',['addytywny','multiplikatywny'])
-sz = col3.selectbox('Czy stłumić składnik trendu:',['tak','nie'])
+t = col1.selectbox('Wybierz rodzaj trendu  :',['Addytywny','Multiplikatywny'])
+s = col2.selectbox('Wybierz rodzaj sezonowości  :',['Addytywny','Multiplikatywny'])
+sz = col3.selectbox('Czy stłumić składnik trendu:',['Tak','Nie'])
+
+if t='Addytywny':
+  wybor_t='add'
+else:
+  wybor_t='mul'
+
+st.subheader(wybor_t)
+# model
+hw['HWES3'] = ExponentialSmoothing(hw['HIGIENA OSOBISTA'],damped=False,trend='add',seasonal='add',seasonal_periods=12,freq='MS').fit().fittedvalues
 
 
 
