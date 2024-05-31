@@ -12,6 +12,8 @@ import plotly.express as px
 
 dane = pd.read_excel('Do modelu.xlsx')
 
+st.header('Model Holt-Winters')
+
 
 
 
