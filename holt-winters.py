@@ -57,8 +57,14 @@ df1.set_index(df1.miesiac,inplace=True) #indexy to teraz daty
 hw=df1[['miesiac',wybor_kat]]
 hw=hw.loc[:,['miesiac',wybor_kat]]
 
+hw['HWES3'] = ExponentialSmoothing(hw[wybor_kat],damped=wybor_sz,trend=wybor_t,seasonal=wybor_s,seasonal_periods=12,freq='MS').fit().fittedvalues
 
+from sklearn.metrics import mean_absolute_error,mean_squared_error
+MSE=mean_squared_error(hw[wybor_kat], list(hw['HWES3']))
+MAE=mean_absolute_error(hw[wybor_kat], list(hw['HWES3']))
+RMSE=np.sqrt(MSE)
 
+st.subheader(RMSE)
 
 
 
