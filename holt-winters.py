@@ -10,6 +10,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
 
+dane = pd.read_excel('Do modelu.xlsx')
+
 
 
 
