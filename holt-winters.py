@@ -86,3 +86,45 @@ fighw1.show()
 
 st.plotly_chart(fighw1,True)
 
+cz=[]
+for i in range(2024,2030): #lata do predykcji
+    for j in range(1,13): #miesiace
+        if j<=9:
+            cz.append(str(i)+'-'+'0'+str(j))
+        else:
+            cz.append(str(i)+'-'+str(j))       
+
+
+
+fitted_model = ExponentialSmoothing(hw[wybor_kat],damped=wybor_sz,trend=wybor_t,seasonal=wybor_s,seasonal_periods=12).fit()
+test_predictions = fitted_model.forecast(24)
+
+fighw2 = go.Figure(layout =go.Layout(
+    xaxis = dict(showgrid=True,tickfont=dict(size=14),title='<b>Data', ticklabelmode="period", dtick="M1", tickformat="%b\n%",tickangle=45,tickvals=cz[:48],
+                            ticktext = cz[:48],linecolor='black',tickwidth=1,tickcolor='black',ticks="outside"),
+    yaxis = dict(linecolor='black',title='<b>Liczba sprzedaży [w sztukach]',tickwidth=1,tickcolor='black',ticks="outside",gridcolor='black')
+    ))
+fig1hw2.add_trace(go.Scatter(
+        x = cz[:24],
+        y = hw[wybor_kat],
+        name = "xyz",
+        line_color = 'red',
+        mode='lines+markers',
+        marker_size=8,
+        line_width=3
+        ))  
+fighw2.add_trace(go.Scatter(
+        x = cz[24:],
+        y = test_predictions.values,
+        name = "HWES_pred",
+        mode='lines+markers',
+        marker_size=6,
+        line_color = 'green',
+        opacity = 1))
+
+fighw2.update_layout(plot_bgcolor='white',height=550,font=dict(
+            size=18,
+            color="Black"),title='<b>Prognoza sprzedaży ilościowej kategorii xyz przy urzyciu modelu Holta-Wintersa',title_x=0.5)
+
+
+st.plotly_chart(fighw2,True)
