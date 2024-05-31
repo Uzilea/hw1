@@ -13,7 +13,7 @@ import plotly.express as px
 dane = pd.read_excel('Do modelu.xlsx')
 
 st.header('Model Holt-Winters')
-st.subheader('Model Holta-Wintersa, nazywany również modeliem wygładzania wykładniczego, jest jednym z najpopularniejszych modeli do prognozowania danych szeregów czasowych. Model ten jest szczególnie skuteczny przy prognozowaniu danych, które wykazują zarówno sezonowość, jak i trend.')
+st.subheader('Model Holta-Wintersa, nazywany również modelem wygładzania wykładniczego, jest jednym z najpopularniejszych modeli do prognozowania danych szeregów czasowych. Model ten jest szczególnie skuteczny przy prognozowaniu danych, które wykazują zarówno sezonowość, jak i trend.')
 ll, rr = st.columns((2,2))
 
 
