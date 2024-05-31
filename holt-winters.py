@@ -71,7 +71,7 @@ fighw1.add_trace(go.Scatter(
         x = df1['Rok_miesiac'],
         y = hw[wybor_kat],
         mode='lines+markers',
-        line_color='coral'
+        line_color='coral',
         name='Neuca',
         ))
 fighw1.add_trace(go.Scatter(
