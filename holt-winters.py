@@ -64,9 +64,25 @@ MSE=mean_squared_error(hw[wybor_kat], list(hw['HWES3']))
 MAE=mean_absolute_error(hw[wybor_kat], list(hw['HWES3']))
 RMSE=np.sqrt(MSE)
 
-st.subheader(RMSE)
-
-
+#wizualizacja
+fighw1 = go.Figure(layout =go.Layout(xaxis = dict(ticklabelmode="period", dtick="M1", tickformat="%b\n%",tickangle=45,tickvals=list(df1['Rok_miesiac'].astype('string')),
+                            ticktext = df1['Rok_miesiac'].astype('string'),linecolor='black',tickwidth=1,tickcolor='black',ticks="outside",tickfont=dict(size=12))))
+fighw1.add_trace(go.Scatter(
+        x = df1['Rok_miesiac'],
+        y = hw[wybor_kat],
+        mode='lines+markers',
+        line_color='red'
+        ))
+fighw1.add_trace(go.Scatter(
+    x = df1['Rok_miesiac'],
+    y = hw['HWES3'],
+    name = "HWES",
+    mode='lines+markers',
+    marker_size=6,
+    line_color = 'dodgerblue',
+    opacity = 0.8))
+fighw1.update_layout(title='Sprzedaż ilościowa',wybor_kat,' - prognoza')
+fighw1.show()
 
 
 
