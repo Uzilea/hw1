@@ -42,7 +42,9 @@ if sz=='Tak':
 else:
   wybor_sz=False
 
-st.subheader(wybor_t, wybor_s, wybor_sz)
+st.subheader(wybor_t)
+st.subheader(wybor_s)
+st.subheader(wybor_sz)
 # model
 # hw['HWES3'] = ExponentialSmoothing(hw['HIGIENA OSOBISTA'],damped=False,trend='add',seasonal='add',seasonal_periods=12,freq='MS').fit().fittedvalues
 
