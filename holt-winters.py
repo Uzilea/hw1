@@ -80,7 +80,7 @@ fighw1.add_trace(go.Scatter(
     name = "Holt-Winters",
     mode='lines+markers',
     marker_size=6,
-    line_color = 'aquamarine',)
+    line_color = 'aquamarine',))
 fighw1.update_layout(title=f'Ilościowa sprzedaż kategorii {wybor_kat.lower()} w Neuce w podziale na miesiące')
 fighw1.show()
 
