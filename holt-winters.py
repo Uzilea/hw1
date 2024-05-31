@@ -24,7 +24,10 @@ kategorie=kategorie[2:]
 wybor_kat = st.selectbox('Wybierz kategorię :', kategorie)
 
 st.subheader('Wybierz parametry modelu :')
-l, r = st.columns((2,2))
+col1, col2, col3= st.columns(3)
+t = col1.selectbox('Wybierz rodzaj trendu  :',['addytywny','multiplikatywny'])
+s = col2.selectbox('Wybierz rodzaj sezonowości  :',['addytywny','multiplikatywny'])
+sz = col3.selectbox('Czy stłumić składnik trendu:',['tak','nie'])
 
 
 
