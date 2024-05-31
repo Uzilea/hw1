@@ -42,9 +42,15 @@ if sz=='Tak':
 else:
   wybor_sz=False
 
-st.subheader(wybor_t)
-st.subheader(wybor_s)
-st.subheader(wybor_sz)
+
+# Seasonality decomposition
+from statsmodels.tsa.seasonal import seasonal_decompose
+from statsmodels.tsa.seasonal import seasonal_decompose 
+# holt winters 
+# single exponential smoothing
+from statsmodels.tsa.holtwinters import SimpleExpSmoothing   
+# double and triple exponential smoothing
+from statsmodels.tsa.holtwinters import ExponentialSmoothing
 # model
 # hw['HWES3'] = ExponentialSmoothing(hw['HIGIENA OSOBISTA'],damped=False,trend='add',seasonal='add',seasonal_periods=12,freq='MS').fit().fittedvalues
 
