@@ -81,7 +81,7 @@ fighw1.add_trace(go.Scatter(
     marker_size=6,
     line_color = 'dodgerblue',
     opacity = 0.8))
-fighw1.update_layout(title='Sprzedaż ilościowa',wybor_kat,' - prognoza')
+fighw1.update_layout(title='Sprzedaż ilościowa - prognoza')
 fighw1.show()
 
 
