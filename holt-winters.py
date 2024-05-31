@@ -84,5 +84,5 @@ fighw1.add_trace(go.Scatter(
 fighw1.update_layout(title='Sprzedaż ilościowa - prognoza')
 fighw1.show()
 
-
+st.plotly_chart(fighw1,True)
 
