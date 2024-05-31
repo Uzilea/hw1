@@ -123,3 +123,9 @@ fighw2.update_layout(title=f'Ilościowa sprzedaż kategorii {wybor_kat.lower()} 
 
 
 st.plotly_chart(fighw2,True)
+
+l, r = st.columns((2,2))
+l.subheader('Średni błąd absolutny :')
+l.info('**MAE : '+str(round(MAE,3))+'**')
+r.subheader('Błąd średniokwadratowy :')
+r.warning('**RMSE : '+str(round(RMSE,3))+'**')
