@@ -105,8 +105,8 @@ fighw2 = go.Figure(layout =go.Layout(
 fighw2.add_trace(go.Scatter(
         x = cz[:24],
         y = hw[wybor_kat],
-        name = "xyz",
-        line_color = 'red',
+        name = "Neuca",
+        line_color = 'coral',
         mode='lines+markers',
         marker_size=8,
         line_width=3
@@ -114,15 +114,12 @@ fighw2.add_trace(go.Scatter(
 fighw2.add_trace(go.Scatter(
         x = cz[24:],
         y = test_predictions.values,
-        name = "HWES_pred",
+        name = "Holt-Winters",
         mode='lines+markers',
         marker_size=6,
-        line_color = 'green',
-        opacity = 1))
+        line_color = 'aquamarine'))
 
-fighw2.update_layout(plot_bgcolor='white',height=550,font=dict(
-            size=18,
-            color="Black"),title='<b>Prognoza sprzedaży ilościowej kategorii xyz przy urzyciu modelu Holta-Wintersa',title_x=0.5)
+fighw2.update_layout(title=f'Ilościowa sprzedaż kategorii {wybor_kat.lower()} w Neuce w podziale na miesiące')
 
 
 st.plotly_chart(fighw2,True)
