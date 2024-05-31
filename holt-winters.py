@@ -65,7 +65,7 @@ MAE=mean_absolute_error(hw[wybor_kat], list(hw['HWES3']))
 RMSE=np.sqrt(MSE)
 
 #wizualizacja
-fighw1 = go.Figure(layout =go.Layout(xaxis = dict(ticklabelmode="period", dtick="M1", tickformat="%b\n%",tickangle=45,tickvals=list(df1['Rok_miesiac'].astype('string')),
+fighw1 = go.Figure(layout =go.Layout(xaxis = dict(ticklabelmode="period", dtick="M1", tickformat="%b\n%",tickangle=90,tickvals=list(df1['Rok_miesiac'].astype('string')),
                             ticktext = df1['Rok_miesiac'].astype('string'),linecolor='black',tickwidth=1,tickcolor='black',ticks="outside",tickfont=dict(size=12))))
 fighw1.add_trace(go.Scatter(
         x = df1['Rok_miesiac'],
@@ -100,7 +100,7 @@ fitted_model = ExponentialSmoothing(hw[wybor_kat],damped=wybor_sz,trend=wybor_t,
 test_predictions = fitted_model.forecast(24)
 
 fighw2 = go.Figure(layout =go.Layout(
-    xaxis = dict(tickfont=dict(size=14),title='<b>Data', ticklabelmode="period", dtick="M1", tickformat="%b\n%",tickangle=45,tickvals=cz[:48],
+    xaxis = dict(tickfont=dict(size=14),title='<b>Data', ticklabelmode="period", dtick="M1", tickformat="%b\n%",tickangle=90,tickvals=cz[:48],
                             ticktext = cz[:48],linecolor='black',tickwidth=1,tickcolor='black',ticks="outside"),
     yaxis = dict(linecolor='black',title='<b>Liczba sprzedaży [w sztukach]',tickwidth=1,tickcolor='black',ticks="outside",gridcolor='black')
     ))
