@@ -104,7 +104,7 @@ fighw2 = go.Figure(layout =go.Layout(
                             ticktext = cz[:48],linecolor='black',tickwidth=1,tickcolor='black',ticks="outside"),
     yaxis = dict(linecolor='black',title='<b>Liczba sprzedaży [w sztukach]',tickwidth=1,tickcolor='black',ticks="outside",gridcolor='black')
     ))
-fig1hw2.add_trace(go.Scatter(
+fighw2.add_trace(go.Scatter(
         x = cz[:24],
         y = hw[wybor_kat],
         name = "xyz",
