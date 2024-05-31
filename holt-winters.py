@@ -43,16 +43,22 @@ else:
   wybor_sz=False
 
 
-# Seasonality decomposition
+
 from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.seasonal import seasonal_decompose 
-# holt winters 
-# single exponential smoothing
 from statsmodels.tsa.holtwinters import SimpleExpSmoothing   
-# double and triple exponential smoothing
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
+
 # model
-# hw['HWES3'] = ExponentialSmoothing(hw['HIGIENA OSOBISTA'],damped=False,trend='add',seasonal='add',seasonal_periods=12,freq='MS').fit().fittedvalues
+df1 = dane
+df1['miesiac'] = pd.to_datetime(df1['Rok_miesiac'])
+df1.set_index(df1.miesiac,inplace=True) #indexy to teraz daty
+
+hw=df1[['miesiac',wybor_kat]]
+hw=hw.loc[:,['miesiac',wybor_kat]]
+
+
+
 
 
 
